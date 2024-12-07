@@ -1,0 +1,37 @@
+.header-section {
+  display: flex;
+  justify-content: end;
+  padding-top: 23px;
+  padding-right: 90px;
+  /* TODO: potentially add a margin bottom */
+}
+
+.about-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.25rem;
+}
+
+.about-content {
+  border: 1px solid white;
+  min-width: 27px;
+  text-align: center;
+  border-radius: 10%;
+  transition: all 0.15s ease;
+}
+
+.about-content:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+@media (max-width: 600px) {
+  .header-section {
+    padding-top: 10px;
+    padding-right: 20px;
+  }
+  .about-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+  }
+}

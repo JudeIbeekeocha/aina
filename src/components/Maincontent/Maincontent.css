@@ -1,0 +1,144 @@
+.main-section{
+    height: 87%;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    padding-left: 90px;
+    padding-right: 90px;
+    gap: 20px;
+}
+
+.content-container{
+    overflow: scroll;
+}
+
+.input-container{
+    display: flex;
+    width: 100%;
+    align-items: center; 
+    justify-content: center;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.input-field{
+    flex-basis: 500px;
+    height: 40px;
+    border: 1px solid black;
+    border-right: none;
+    background-color: rgba(0, 0, 0, 0.163);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-left: 10px;
+    color: white;
+}
+
+.input-field:focus{
+    outline: none;
+}
+.input-field::placeholder{
+    color: rgba(255, 255, 255, 0.56);
+}
+
+@media (max-width: 600px) {
+    .main-container{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .send-button{
+        display: none
+    }
+    .input-field{
+        border-right: 1px solid black;
+        border-radius: 15px;
+    }
+}
+
+.send-button{
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    border-left: none;
+    background-color: rgba(0, 0, 0, 0.163);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+    transition: all .15s ease;
+}
+.send-button:hover{
+    background-color: rgba(255, 255, 255, 0.16);
+}
+
+.bi-send{
+    margin-top: 5px;
+}
+
+
+.user-content-container{
+    text-align: right;
+}
+.user-message{
+    display: inline-block;
+    text-align: right;
+    background-color: rgba(255, 255, 255, 0.16) ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: auto;
+}
+
+.response-content-container{
+    text-align: left;
+
+}
+.response-message-title{
+    display: inline-block;
+    text-align: left;
+    margin-top: 10px;
+}
+.response-message-title{
+    font-size: 1.25rem;
+}
+.response-message-body{
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+.response-message-body::first-letter{
+    font-size: 1.875rem;
+}
+.response-message-publisher{
+    display: inline-block;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9375rem;
+}
+.response-message-source{
+    display: inline-block;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 0.9375rem;
+    color: white;
+}
+.response-message-source:active{
+    color: rgba(255, 255, 255, 0.16)
+}
+
+.response-message-body,
+.response-message-title,
+.response-message-publisher,
+.response-message-source{
+    padding-left: 5px;
+}
+
+.response-content-container{
+    border-left: 1px solid rgba(255, 255, 255, 0.50);
+
+}
