@@ -1,6 +1,11 @@
 .main-section{
     height: 87%;
 }
+@media (max-width: 600px) {
+    .main-section{
+        height: 90%;
+    }
+}
 .main-container{
     display: flex;
     flex-direction: column;
