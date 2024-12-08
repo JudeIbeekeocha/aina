@@ -86,6 +86,8 @@
 .user-content-container{
     text-align: right;
 }
+
+/* TODO: change display to block so it can auto move to the right */
 .user-message{
     display: inline-block;
     text-align: right;
