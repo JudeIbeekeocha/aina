@@ -19,6 +19,7 @@
 
 .content-container{
     overflow: scroll;
+    width: 100%;
 }
 
 .input-container{
@@ -55,17 +56,18 @@
         padding-right: 40px;
     }
     .send-button{
-        display: none
     }
     .input-field{
-        border-right: 1px solid black;
-        border-radius: 15px;
+        /* border-right: 1px solid black;
+        border-radius: 15px; */
     }
 }
 
 .send-button{
     height: 40px;
-    width: 40px;
+    /* width: 40px; */
+    flex-basis: 40px;
+    flex-shrink: 0; 
     border: 1px solid black;
     border-left: none;
     background-color: rgba(0, 0, 0, 0.163);
@@ -115,6 +117,7 @@
     display: inline-block;
     text-align: left;
     margin-bottom: 5px;
+    font-size: 0.9975rem;
 }
 .response-message-body::first-letter{
     font-size: 1.875rem;

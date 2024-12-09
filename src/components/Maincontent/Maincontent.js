@@ -24,42 +24,26 @@ export function addMessageToDOM(message) {
   contentSection.appendChild(userContainer);
 }
 
-// export function sendResponseToDOM(response, category) {
-export function sendResponseToDOM() {
+export function sendResponseToDOM(response, category) {
+  // export function sendResponseToDOM(category) {
+  let contentSection = document.querySelector(".content-container");
   const responseContainer = document.createElement("div");
   const responseMessage = document.createElement("p");
 
   responseContainer.classList.add("response-content-container");
   if (category === "title") {
     responseMessage.classList.add("response-message-title");
-    responseMessage.textContent = "Title";
+    responseMessage.textContent = response;
   } else if (category === "body") {
     responseMessage.classList.add("response-message-body");
-    responseMessage.textContent = "Body Test";
+    responseMessage.textContent = response;
   } else if (category === "publisher") {
     responseMessage.classList.add("response-message-publisher");
-    responseMessage.textContent = "Publisher";
+    responseMessage.textContent = response;
   } else if (category === "link") {
     responseMessage.innerHTML = `<a href="${response}" target="_blank" class="response-message-source">Source</a>`;
-    // response;
   }
 
-  // responseMessage.textContent =
-  //   response;
   responseContainer.appendChild(responseMessage);
   contentSection.appendChild(responseContainer);
 }
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const inputField = document.querySelector(".input-field");
-//   console.log("DOM is loaded");
-
-//   inputField.addEventListener("keydown", function (event) {
-//     if (event.key === "Enter") {
-//       const message = getUserMessage();
-//       addMessageToDOM(message);
-//       // fetchResponse(message);
-//     }
-//   });
-
-// });

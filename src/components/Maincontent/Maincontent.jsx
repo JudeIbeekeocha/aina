@@ -1,9 +1,12 @@
 import "./Maincontent.css";
 import { getUserMessage, addMessageToDOM, sendResponseToDOM } from "./Maincontent.js";
+import { fetchResponse } from "./fetchResponse.js";
+
 function MainContent() {
-    function doAll(){
+    function callStoryFunction(){
         let message = getUserMessage();
         addMessageToDOM(message);
+        fetchResponse(message);
     }
   return (
     <main className="main-section">
@@ -15,8 +18,12 @@ function MainContent() {
             type="text"
             placeholder="i.e: 'Apple', 'Microsoft', 'Meta', 'Amazon'"
             name="ticker_request"
+            onKeyDown={(event) => {
+              if(event.key === "Enter"){
+                callStoryFunction();
+            }}}
           />
-          <button className="send-button" onClick={doAll}>
+          <button className="send-button" onClick={callStoryFunction}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
