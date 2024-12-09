@@ -6,7 +6,7 @@ function Navbar() {
     // TODO: potentially use an SVG for the question mark
     <>
       <header className="header-section">
-        <a href="#" className="about-link">
+        <a href="" className="about-link">
           <div className="about-content">?</div>
         </a>
       </header>

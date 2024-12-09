@@ -1,4 +1,5 @@
 .header-section {
+  /* TODO:Adjust height to percentage for better responsiveness */
   display: flex;
   justify-content: end;
   padding-top: 23px;
