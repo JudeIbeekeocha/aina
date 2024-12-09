@@ -3,7 +3,7 @@
   justify-content: end;
   padding-top: 23px;
   padding-right: 90px;
-  /* TODO: potentially add a margin bottom */
+  margin-bottom: 5px;
 }
 
 .about-link {

@@ -1,6 +1,28 @@
 .main-section{
     height: 87%;
 }
+
+/* laptop view */
+@media (min-height: 800px) {
+    .main-section {
+        height: 88%;
+    }
+}
+
+/* Larger desktop/monitor view */
+@media (min-height: 900px) {
+    .main-section {
+        height: 90%;
+    }
+}
+
+/* Phone/smaller device views */
+@media (max-width: 600px) {
+    .main-section{
+        height: 90%;
+    }
+}
+
 .main-container{
     display: flex;
     flex-direction: column;
@@ -14,6 +36,7 @@
 
 .content-container{
     overflow: scroll;
+    width: 100%;
 }
 
 .input-container{
@@ -50,17 +73,18 @@
         padding-right: 40px;
     }
     .send-button{
-        display: none
     }
     .input-field{
-        border-right: 1px solid black;
-        border-radius: 15px;
+        /* border-right: 1px solid black;
+        border-radius: 15px; */
     }
 }
 
 .send-button{
     height: 40px;
-    width: 40px;
+    /* width: 40px; */
+    flex-basis: 40px;
+    flex-shrink: 0; 
     border: 1px solid black;
     border-left: none;
     background-color: rgba(0, 0, 0, 0.163);
@@ -81,6 +105,8 @@
 .user-content-container{
     text-align: right;
 }
+
+/* TODO: change display to block so it can auto move to the right */
 .user-message{
     display: inline-block;
     text-align: right;
@@ -108,6 +134,7 @@
     display: inline-block;
     text-align: left;
     margin-bottom: 5px;
+    font-size: 0.9975rem;
 }
 .response-message-body::first-letter{
     font-size: 1.875rem;
