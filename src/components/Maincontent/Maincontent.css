@@ -1,11 +1,28 @@
 .main-section{
     height: 87%;
 }
+
+/* laptop view */
+@media (min-height: 800px) {
+    .main-section {
+        height: 88%;
+    }
+}
+
+/* Larger desktop/monitor view */
+@media (min-height: 900px) {
+    .main-section {
+        height: 90%;
+    }
+}
+
+/* Phone/smaller device views */
 @media (max-width: 600px) {
     .main-section{
         height: 90%;
     }
 }
+
 .main-container{
     display: flex;
     flex-direction: column;
