@@ -12,7 +12,6 @@ export function getTickerHeight() {
 }
 
 export async function getTickerData(tickers) {
-  // Send the list of tickers as JSON in the body of the POST request
   let dataToSend = {
     tickers: tickers, // This is the list of tickers
   };
@@ -79,7 +78,6 @@ export async function addTickerToDOM(tickerList, interval = 60000) {
     document.querySelectorAll(".ticker").forEach((tickerDiv) => {
       tickerDiv.addEventListener("click", () => {
         const tickerName = event.currentTarget.getAttribute("data-ticker-name");
-        console.log(tickerName); // Log the ticker name to the console
         addMessageToDOM(tickerName); // Call the addMessageToDOM function with the ticker name
         fetchResponse(tickerName); // Call the fetchResponse function with the ticker name
       });

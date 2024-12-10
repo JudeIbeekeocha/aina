@@ -5,6 +5,28 @@
   padding-top: 23px;
   padding-right: 90px;
   margin-bottom: 5px;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.about-header-section {
+  padding-left: 90px;
+}
+.home-page-container {
+  border: 1px solid white;
+  min-width: 27px;
+  text-align: center;
+  border-radius: 10%;
+  height: 100%;
+  display: flex;
+  transition: all 0.15s ease;
+  align-items: center;
+  justify-content: center;
+}
+.home-page-container:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+.bi-house {
+  color: #ffffff;
 }
 
 .about-link {
