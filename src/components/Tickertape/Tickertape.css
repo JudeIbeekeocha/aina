@@ -9,7 +9,7 @@
 .ticker-content {
   display: flex;
   align-items: center;
-  animation: ticker-scroll 30s linear infinite;
+  animation: ticker-scroll 95s linear infinite;
   height: 100%;
 }
 
