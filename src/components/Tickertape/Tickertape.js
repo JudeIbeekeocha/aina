@@ -8,70 +8,67 @@ export function getTickerHeight() {
   return tickerHeight;
 }
 
-export function getTickerData(tickers) {
+export async function getTickerData(tickers) {
   // Send the list of tickers as JSON in the body of the POST request
   let dataToSend = {
     tickers: tickers, // This is the list of tickers
   };
+  let tickerData;
 
-  fetch("http://127.0.0.1:5000/ticker-tape", {
+  const response = await fetch("http://127.0.0.1:5000/ticker-tape", {
     method: "POST", // Use POST to send data in the request body
     headers: {
       "Content-Type": "application/json", // Indicate that we're sending JSON
     },
     body: JSON.stringify(dataToSend), // Send the tickers list in the body
   })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data.received_data); // Log the returned data from the backend
-      let tickerContainer = document.querySelector(".ticker-content");
+    const data = await response.json()
+    tickerData = await data.received_data; // Log the returned data from the backend
 
-      const tickerData = data.received_data;
-      tickerData.forEach((ticker) => {
-        addTickerToDOM(ticker);
-      });
-      tickerData.forEach((ticker) => {
-        addTickerToDOM(ticker);
-      });
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  return tickerData;
 }
 
-function addTickerToDOM(ticker) {
-  let tickerContainer = document.querySelector(".ticker-content");
-  let tickerElement = document.createElement("div");
-  let tickerName = document.createElement("span");
-  let tickerPrice = document.createElement("span");
-  let tickerChange = document.createElement("span");
+export async function addTickerToDOM(tickerList) {
+  const tickerInfo = await getTickerData(tickerList);
 
-  tickerElement.classList.add("ticker");
-  tickerName.classList.add("ticker-item", "name");
-  tickerPrice.classList.add("ticker-item", "price");
-  tickerChange.classList.add("ticker-item", "change");
-
-  tickerName.textContent = ticker.ticker;
-  tickerPrice.textContent = `$${ticker["current-price"]}`;
-  tickerChange.textContent = `${ticker["amount-change"]}%`;
-
-  tickerElement.appendChild(tickerName);
-  tickerElement.appendChild(tickerPrice);
-  tickerElement.appendChild(tickerChange);
-
-  tickerContainer.appendChild(tickerElement);
-}
-function addTickerToDOMTwo(tickerInfo, tickerList) {
   let tickerHTML = `
     `;
   tickerInfo.forEach((ticker, index) => {
     tickerHTML += `
         <div class="ticker">
-            <span class="ticker-item name">${tickerList[index]}</span>
-            <span class="ticker-item price">$${ticker["current-price"]}</span>
-            <span class="ticker-item change">${ticker["amount-change"]}%</span>
+            <span className="ticker-item name">${tickerList[index]}</span>
+            <span className="ticker-item price">$${
+              ticker["current-price"].toFixed(2)
+            }</span>
+            <span class="${ticker["percent-change"] > 0 ? "up" : "down"}">
+              <span className="ticker-item change">$${
+                ticker["amount-change"].toFixed(2)
+              }</span>
+              <span className="ticker-item change">(${
+                ticker["percent-change"].toFixed(2)
+              }%)</span>
+            </span>
         </div>
         `;
   });
-  return tickerHTML;
+  tickerInfo.forEach((ticker, index) => {
+    tickerHTML += `
+        <div class="ticker">
+            <span className="ticker-item name">${tickerList[index]}</span>
+            <span className="ticker-item price">$${
+              ticker["current-price"].toFixed(2)
+            }</span>
+            <span class="${ticker["percent-change"] > 0 ? "up" : "down"}">
+              <span className="ticker-item change">$${
+                ticker["amount-change"].toFixed(2)
+              }</span>
+              <span className="ticker-item change">(${
+                ticker["percent-change"].toFixed(2)
+              }%)</span>
+            </span>
+        </div>
+        `;
+  });
+  
+  document.querySelector(".ticker-content").innerHTML = tickerHTML;
 }

@@ -1,19 +1,20 @@
 import { useEffect } from "react";
 import "./Tickertape.css";
-import { getTickerData, getTickerHeight } from "./Tickertape.js";
+import { addTickerToDOM, getTickerHeight } from "./Tickertape.js";
 
 function TickerTape() {
   useEffect(() => {
     const tickerHeight = getTickerHeight();
     const tickerContainer = document.querySelector(".ticker-container");
-    tickerContainer.style.height = `${tickerHeight - 5}px`;
+    tickerContainer.style.height = `${tickerHeight - 5}px`; //5px comes from header margin bottom
   });
 
   useEffect(() => { 
     const tickers = ['AAPL', 'MSFT', 'GOOG', 'META', 'NVDA', 'JPM', 'GS', 'T'];
-    getTickerData(tickers);
+    addTickerToDOM(tickers);
 
   })
+
   return (
     <>
       <div className="ticker-container">

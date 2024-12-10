@@ -40,3 +40,10 @@
         transform: translateX(-50%); /* Move left by full width of the content */
     }
 }
+
+.up{
+    color: green;
+}
+.down{
+    color: red;
+}
