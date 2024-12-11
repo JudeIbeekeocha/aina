@@ -39,4 +39,12 @@ export function aboutFunction(){
       const myModal = new bootstrap.Modal(document.getElementById("myModal"));
       myModal.show();
     });
+
+    const closeButtons = document.querySelector(".btn-close");
+    closeButtons.addEventListener("click", () => {
+      const backdrop = document.querySelector(".modal-backdrop")
+      if (backdrop){
+        backdrop.remove()
+      }
+    });
 }

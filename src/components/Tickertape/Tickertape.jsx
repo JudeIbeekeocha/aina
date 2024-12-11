@@ -10,9 +10,9 @@ function TickerTape() {
   });
 
   useEffect(() => { 
-    const tickers = ['SPY', 'AAPL', 'MSFT', 'GOOG', 'META', 'NVDA', 'JPM', 'GS', 'AMZN'];
-    const oneMinute = 60000; // 60000 milliseconds = 1 minute (so change later)
-    addTickerToDOM(tickers, oneMinute)
+    const tickers = [ 'AAPL', 'MSFT', 'GOOG', 'META', 'NVDA', 'GS', 'AMZN'];
+    const threeMinutes = 3 * 60000; // 60000 milliseconds = 1 minute
+    addTickerToDOM(tickers, threeMinutes)
 
   })
 

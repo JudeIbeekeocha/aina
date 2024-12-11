@@ -1,96 +1,93 @@
-
 .about-buttons {
-    display: flex;
-    gap: 10px;
-  }
-  .mvt-button {
-    padding-left: 20px;
-    padding-right: 20px;
-    transition: all 0.25s ease;
-    /* background-color: transparent; */
-  }
-  
-  .mvt-button:hover {
-    background-color: rgba(255, 255, 255, 0.16);
-  }
-  .about-content-section {
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-    align-items: center;
-    gap: 20px;
-  }
-  .hidden-content-section {
-    margin-left: 250px;
-    margin-right: 250px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.16);
-    border-radius: 5px;
-  }
-  
-  .hidden-content-section .collapse {
-    display: none; /* Hide initially */
-    opacity:0; /* Start fully transparent */
-    height: 0; /* Start with no height */
-    overflow: hidden; /* Prevent content overflow */
-    padding: 0px;
-    transition: opacity 0.25s ease, height 0.25s ease, padding 0.35s ease; /* Smooth transition */
-  }
-  
-  .hidden-content-section .collapse.show {
-    display: block; /* Display when active */
-    opacity: 1; /* Fully opaque */
-    height: 100%;
-    padding: 10px 1px;
-  }
-  
-  .collapse p{
-      /* padding: 10px; */
-      margin: 0px;
-  }
-  
-  .founder-box {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-  }
-  
-  .founder-button {
-    background-color: transparent;
-    border: 1px solid white;
-    padding: 4px 6px;
-  }
-  
-  .founder-button:hover {
-    border: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.16);
-  }
-  
-  
-  .button-statement{
-      display: flex;
-      gap: 4px;
-      align-items: center;
-      justify-content: center;
-  }
-  .mission-icon{
-      margin-bottom: 2px;
-  }
-  
-  .value-icon{
-      height: 27px;
-  }
-  
-  
-  .modal-title,
-  .modal-body,
-  .modal-footer{
-    color:black;
-  }
-  
-  .modal-footer{
-    justify-content: flex-start;
-  }
+  display: flex;
+  gap: 10px;
+}
+.mvt-button {
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: all 0.25s ease;
+  /* background-color: transparent; */
+}
+
+.mvt-button:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+.about-content-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  align-items: center;
+  gap: 20px;
+}
+.hidden-content-section {
+  margin-left: 250px;
+  margin-right: 250px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.16);
+  border-radius: 5px;
+}
+
+.hidden-content-section .collapse {
+  display: none; /* Hide initially */
+  opacity: 0; /* Start fully transparent */
+  height: 0; /* Start with no height */
+  overflow: hidden; /* Prevent content overflow */
+  padding: 0px;
+  transition: opacity 0.25s ease, height 0.25s ease, padding 0.35s ease; /* Smooth transition */
+}
+
+.hidden-content-section .collapse.show {
+  display: block; /* Display when active */
+  opacity: 1; /* Fully opaque */
+  height: 100%;
+  padding: 10px 1px;
+}
+
+.collapse p {
+  /* padding: 10px; */
+  margin: 0px;
+}
+
+.founder-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.founder-button {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 4px 6px;
+}
+
+.founder-button:hover {
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.button-statement {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+.mission-icon {
+  margin-bottom: 2px;
+}
+
+.value-icon {
+  height: 27px;
+}
+
+.modal-title,
+.modal-body,
+.modal-footer {
+  color: black;
+}
+
+.modal-footer {
+  justify-content: flex-start;
+}

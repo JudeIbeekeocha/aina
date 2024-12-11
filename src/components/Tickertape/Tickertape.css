@@ -19,11 +19,12 @@
 .ticker {
   cursor: pointer;
   display: flex;
-  gap: 38px;
+  gap: 30px;
   border-right: 1px solid white;
   /* border-left: 1px solid white; */
   padding-right: 40px;
   padding-left: 40px;
+  align-items: center;
 }
 .ticker:hover{
     background-color: #6565654e;
@@ -46,4 +47,9 @@
 }
 .down{
     color: red;
+}
+
+.ticker img{
+  height: 20px;
+  width: 20px;
 }

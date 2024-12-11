@@ -39,6 +39,7 @@ export async function addTickerToDOM(tickerList, interval = 60000) {
     tickerInfo.forEach((ticker, index) => {
       tickerHTML += `
           <div class="ticker" data-ticker-name="${tickerList[index]}" >
+              <img src="https://assets.parqet.com/logos/symbol/${tickerList[index]}?format=svg" className="ticker-logo" />
               <span className="ticker-item name">${tickerList[index]}</span>
               <span className="ticker-item price">$${ticker[
                 "current-price"
@@ -57,6 +58,7 @@ export async function addTickerToDOM(tickerList, interval = 60000) {
     tickerInfo.forEach((ticker, index) => {
       tickerHTML += `
           <div class="ticker" data-ticker-name="${tickerList[index]}" >
+              <img src="https://assets.parqet.com/logos/symbol/${tickerList[index]}?format=svg" className="ticker-logo" />
               <span className="ticker-item name">${tickerList[index]}</span>
               <span className="ticker-item price">$${ticker[
                 "current-price"
