@@ -1,24 +1,26 @@
 import { sendResponseToDOM } from "./Maincontent";
+import { getTickerData } from "../Tickertape/Tickertape.js";
 
-export function fetchResponse(message) {
+export async function fetchResponse(message) {
   let dataToSend = {
     ticker: message,
   };
-
-  fetch("http://127.0.0.1:5000/receive-json", {
+  const dataToFetch = fetch("http://127.0.0.1:5000/receive-json", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(dataToSend),
-  })
-    .then((response) => response.json())
-    .then((data) => {
+  });
+  const [response, tickerInfo] = await Promise.all([dataToFetch, getTickerData([message])]);
+  const data = await response.json();
 
-      let res = data.received_data;
-      sendResponseToDOM(res.title, "title");
-      sendResponseToDOM(res.publisher, "publisher");
-      sendResponseToDOM(res.body, "body");
-      sendResponseToDOM(res.link, "link");
-    });
+  let res = await data.received_data;
+  console.log(tickerInfo);
+
+  sendResponseToDOM(res.title, "title");
+  sendResponseToDOM(res.publisher, "publisher");
+  sendResponseToDOM(tickerInfo[0]['current-price'], "price");
+  sendResponseToDOM(res.body, "body");
+  sendResponseToDOM(res.link, "link");
 }

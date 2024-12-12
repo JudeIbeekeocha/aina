@@ -158,11 +158,20 @@
 .response-message-source:active{
     color: rgba(255, 255, 255, 0.16)
 }
+.response-message-price{
+    display: inline-block;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 0.9375rem;
+    color: white;
+}
 
 .response-message-body,
 .response-message-title,
 .response-message-publisher,
-.response-message-source{
+.response-message-source,
+.response-message-price{
     padding-left: 5px;
 }
 

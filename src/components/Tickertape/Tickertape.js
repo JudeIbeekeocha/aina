@@ -5,15 +5,18 @@ export function getTickerHeight() {
   const rootContainer = document.querySelector(".root-container");
   const navContainer = document.querySelector(".header-section");
   const mainContainer = document.querySelector(".main-section");
+  const tickerContainer = document.querySelector(".ticker-container");
   const tickerHeight =
     rootContainer.offsetHeight -
     (navContainer.offsetHeight + mainContainer.offsetHeight);
+    
+  tickerContainer.style.height = `${tickerHeight - 5}px`; //5px comes from header margin bottom
   return tickerHeight;
 }
 
 export async function getTickerData(tickers) {
   let dataToSend = {
-    tickers: tickers, // This is the list of tickers
+    tickers: tickers,
   };
   let tickerData;
 
@@ -22,11 +25,10 @@ export async function getTickerData(tickers) {
     headers: {
       "Content-Type": "application/json", // Indicate that we're sending JSON
     },
-    body: JSON.stringify(dataToSend), // Send the tickers list in the body
+    body: JSON.stringify(dataToSend),
   });
   const data = await response.json();
-  tickerData = await data.received_data; // Log the returned data from the backend
-
+  tickerData = await data.received_data;
   return tickerData;
 }
 

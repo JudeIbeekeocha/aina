@@ -5,9 +5,7 @@ import { addTickerToDOM, getTickerHeight } from "./Tickertape.js";
 function TickerTape() {
   useEffect(() => {
     // could move most of the code into the function and call it here
-    const tickerHeight = getTickerHeight();
-    const tickerContainer = document.querySelector(".ticker-container");
-    tickerContainer.style.height = `${tickerHeight - 5}px`; //5px comes from header margin bottom
+   getTickerHeight();
   });
 
   useEffect(() => { 

@@ -42,6 +42,9 @@ export function sendResponseToDOM(response, category) {
     responseMessage.textContent = response;
   } else if (category === "link") {
     responseMessage.innerHTML = `<a href="${response}" target="_blank" class="response-message-source">Source</a>`;
+  } else if (category === 'price') {
+    responseMessage.classList.add("response-message-price");
+    responseMessage.textContent = `Current Price: $${response}`;
   }
 
   responseContainer.appendChild(responseMessage);
