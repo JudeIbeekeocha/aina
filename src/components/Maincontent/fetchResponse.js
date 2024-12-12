@@ -5,7 +5,7 @@ export async function fetchResponse(message) {
   let dataToSend = {
     ticker: message,
   };
-  const dataToFetch = fetch("http://127.0.0.1:5000/receive-json", {
+  const dataToFetch = fetch("https://aina-backend.onrender.com/receive-json", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

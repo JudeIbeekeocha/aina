@@ -20,7 +20,7 @@ export async function getTickerData(tickers) {
   };
   let tickerData;
 
-  const response = await fetch("http://127.0.0.1:5000/ticker-tape", {
+  const response = await fetch("https://aina-backend.onrender.com/ticker-tape", {
     method: "POST", // Use POST to send data in the request body
     headers: {
       "Content-Type": "application/json", // Indicate that we're sending JSON
