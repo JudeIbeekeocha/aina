@@ -16,7 +16,6 @@ export async function fetchResponse(message) {
   const data = await response.json();
 
   let res = await data.received_data;
-  console.log(tickerInfo);
 
   sendResponseToDOM(res.title, "title");
   sendResponseToDOM(res.publisher, "publisher");
