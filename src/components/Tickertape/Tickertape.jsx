@@ -4,7 +4,6 @@ import { addTickerToDOM, getTickerHeight } from "./Tickertape.js";
 
 function TickerTape() {
   useEffect(() => {
-    // could move most of the code into the function and call it here
    getTickerHeight();
   });
 
